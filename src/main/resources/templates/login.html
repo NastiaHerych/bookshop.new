@@ -4,22 +4,16 @@
 
 <head>
     <title>Login</title>
-<!--    <link th:href="@{/css/stylesheet.css}" rel="stylesheet" type="text/css"/>-->
-<!--    <script type="text/javascript" th:src="@{/js/login.js}"></script>-->
 </head>
 <body>
 
-
-<!-- login form -->
 <div>
     <form th:action="@{/login}" method="post">
 
-        <!-- show notification on error -->
         <div th:if="${param.error}">
             Invalid username or password.
         </div>
 
-        <!-- show notification of logout -->
         <div th:if="${param.logout}">
             You have been logged out.
         </div>
