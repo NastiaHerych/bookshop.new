@@ -4,32 +4,42 @@
 
 <head>
     <title>Login</title>
+    <link rel="stylesheet" href="/css/register_login_style.css">
 </head>
 <body>
 
-<div>
-    <form th:action="@{/login}" method="post">
+<div class="wrapper" style="margin-top:200px;">
+    <div class="title">
+        Login Form
+    </div>
 
-        <div th:if="${param.error}">
-            Invalid username or password.
-        </div>
+    <div>
+        <form class="form" th:action="@{/login}" method="post">
+            <p>
+            <div th:if="${param.error}" style="color: red; margin-left:20px;">
+                Invalid email or password!
+            </div></p><br>
 
-        <div th:if="${param.logout}">
-            You have been logged out.
-        </div>
+            <p>
+            <div th:if="${param.logout}" style="color: red; margin-left:20px;">
+                You have been logged out!
+            </div></p><br>
 
+            <div class="inputfield">
+            <label>Email</label>
+            <input type="text" class="input" name="username" th:required="required" th:autofocus="autofocus"/>
+            </div>
 
-        <h2 >Please sign in</h2>
-        <label >User Name</label>
-        <input type="text" name="username" th:required="required" th:autofocus="autofocus"/>
-        <br/>
+            <div class="inputfield">
+            <label>Password</label>
+            <input type="password" class="input" name="password" th:required="required" />
+            </div>
 
-        <label>Password</label>
-        <input type="password" name="password" th:required="required" />
-        <br/>
-
-        <input type="submit" value="Sign In"/>
-    </form>
+            <div class="inputfield">
+            <input type="submit" value="Sign In" class="btn" id="loginbtn"/>
+            </div>
+        </form>
+    </div>
 </div>
 </body>
 </html>
