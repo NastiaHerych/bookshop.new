@@ -1,0 +1,28 @@
+*{
+    font-family: "Open Sans", sans-serif;
+}
+body{
+    background-image: url(/images/background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+.main-menu {
+    margin-top: 275px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+h1 {
+    color: #00264d;
+    text-shadow: 2px 2px 1px white;
+    font-size: 30px;
+}
+span {
+    text-align: center;
+    background-color: #ffffff;
+    height: 120px;
+    width: 520px;
+}

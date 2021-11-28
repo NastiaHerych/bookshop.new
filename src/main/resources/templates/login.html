@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <title>Login</title>
-    <link rel="stylesheet" href="/css/register_login_style.css">
+    <link rel="stylesheet" href="/css/welcome_register_login_style.css">
 </head>
 <body>
-
 <div class="wrapper" style="margin-top:200px;">
     <div class="title">
         Login Form
     </div>
-
     <div>
         <form class="form" th:action="@{/login}" method="post">
             <p>
             <div th:if="${param.error}" style="color: red; margin-left:20px;">
                 Invalid email or password!
             </div></p><br>
-
             <p>
             <div th:if="${param.logout}" style="color: red; margin-left:20px;">
                 You have been logged out!

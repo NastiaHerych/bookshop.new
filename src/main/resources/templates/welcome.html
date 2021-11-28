@@ -5,21 +5,30 @@
     <meta charset="ISO-8859-1">
     <title>Home</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
-    <link rel="stylesheet" href="../static/css/index_style.css" th:href="@{/css/index_style.css}">
-
+    <link rel="stylesheet" href="/css/welcome_register_login_style.css">
 </head>
 <body>
-<div class="main-menu">
-        <span>
-        <div>
-            <h1>Welcome to bookshop!</h1>
-        </div>
-        <div class="low-buttons">
-            <a  th:href="@{/register}"  class="hey" role="button" aria-pressed="true">Register</a>
-            <a   th:href="@{/login}" class="hey" role="button" aria-pressed="true">Sign in</a>
-        </div>
-    </span>
+<div class="wrapper" style="margin-top:300px;">
+    <div class="title">
+        Welcome to bookshop!
+    </div>
+
+    <div>
+        <form class="form">
+            <a style="display:block; text-decoration: none;" th:href="@{/register}">
+                <div class="inputfield">
+                    <input type="button" value="Register" class="btn" style="width:200px" />
+                </div>
+                    </a>
+
+            <a style="display:block; text-decoration: none;" th:href="@{/login}">
+                <div class="inputfield">
+                    <input type="button" value="Sign in" class="btn" id="loginbtn"
+                           style="width:200px; margin-left:250px; margin-top:-50px" />
+                </div>
+            </a>
+        </form>
+    </div>
 </div>
 </body>
 </html>
