@@ -1,5 +1,6 @@
 package application.controller;
 
+import application.models.Role;
 import application.models.User;
 import application.repository.UserRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -29,11 +30,15 @@ public class RegistrationController {
     }
 
     @PostMapping("/register")
-    public String postRegister(User model){
+    public String postRegister(User model , User user){
+        if (userRepository.findByEmail(user.getEmail()).isPresent()) {
+            return "redirect:/register?error";
+        }
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String encodedPassword = passwordEncoder.encode(model.getPassword());
-        model.setPassword(encodedPassword);
-        userRepository.save(model);
+        String encodedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
+        user.setRole(Role.USER);
+        userRepository.save(user);
         return "register_success";
     }
 }

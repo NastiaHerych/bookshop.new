@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Welcome admin <br>
+<div class="wrapper">
+    <div class="title">
+        Add book
+    </div>
+    <form class="form" action="#" th:action="@{/adminPage}" th:object="${book}" method="post">
+        <label>Name</label>
+        <input type="text"  th:field="*{name}" class="input">
+
+
+        <label>Description</label>
+        <input type="text" th:field="*{description}" class="input">
+
+
+        <label>Author</label>
+        <input type="text" th:field="*{author}" class="input">
+
+
+        <label>Price</label>
+        <input type="number"  th:field="*{price}" class="input">
+
+
+        <label>Image URL</label>
+        <input type="text" th:field="*{imageUrl}" class="input">
+
+        <input  type="submit" value="Add" class="btn">
+
+
+    </form>
+</div>
+</body>
+</html>

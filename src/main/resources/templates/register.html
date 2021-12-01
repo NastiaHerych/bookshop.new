@@ -59,6 +59,10 @@
                 <input disabled type="submit" value="Register" class="btn" id="loginbtn">
             </div>
         </a>
+
+        <div th:if="${param.error}" style="color: red; text-align: center">
+            This email is already registered!
+        </div>
     </form>
 </div>
 </body>

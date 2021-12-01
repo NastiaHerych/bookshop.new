@@ -7,10 +7,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Collections;
 
 @Data
 @NoArgsConstructor
 @Entity
+@Table(name = "usr")
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -18,10 +20,14 @@ public class User implements UserDetails {
     private String firstName;
     private String lastName;
     private String password;
+
+    //    @Column(unique = true)
     private String email;
     private String phoneNumber;
     private String address;
     private String postalCode;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     public User(String firstName, String lastName, String password, String email, String phoneNumber, String address, String postalCode) {
         this.firstName = firstName;
@@ -35,7 +41,7 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return Collections.singletonList(role);
     }
 
     @Override
