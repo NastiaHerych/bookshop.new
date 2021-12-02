@@ -3,38 +3,66 @@
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Admin Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="/css/welcome_register_login_style.css">
 </head>
 <body>
-Welcome admin <br>
 <div class="wrapper">
     <div class="title">
+       <span style="color:red"> Welcome admin!</span> <br>
         Add book
     </div>
+    <div>
     <form class="form" action="#" th:action="@{/adminPage}" th:object="${book}" method="post">
+
+        <div class="inputfield">
         <label>Name</label>
         <input type="text"  th:field="*{name}" class="input">
+        </div>
 
-
-        <label>Description</label>
-        <input type="text" th:field="*{description}" class="input">
-
-
+        <div class="inputfield">
         <label>Author</label>
         <input type="text" th:field="*{author}" class="input">
+        </div>
 
+        <div class="inputfield">
+        <label>Article</label>
+        <input type="text"  th:field="*{article}" class="input">
+        </div>
 
+        <div class="inputfield">
+        <label>Available</label>
+        <input type="text"  th:field="*{available}" class="input">
+        </div>
+
+        <div class="inputfield">
+        <label>Rating</label>
+        <input type="text"  th:field="*{rating}" class="input">
+        </div>
+
+        <div class="inputfield">
         <label>Price</label>
         <input type="number"  th:field="*{price}" class="input">
+        </div>
 
+        <div class="inputfield">
+        <label>Old Price</label>
+        <input type="number"  th:field="*{oldPrice}" class="input">
+        </div>
 
+        <div class="inputfield">
         <label>Image URL</label>
         <input type="text" th:field="*{imageUrl}" class="input">
+        </div>
 
+        <div class="inputfield">
         <input  type="submit" value="Add" class="btn">
+        </div>
 
 
     </form>
+    </div>
 </div>
 </body>
 </html>
