@@ -14,9 +14,7 @@
         <nav class="header__nav nav">
             <ul class="nav__list">
                 <li class="nav__item"><a href="header" class="nav__link">Catalog</a></li>
-                <li class="nav__item"><a href="" class="nav__link">Discounts</a></li>
                 <li class="nav__item"><a href="" class="nav__link">Payments and delivery</a></li>
-                <li class="nav__item"><a href="" class="nav__link">Job in our company</a></li>
                 <li class="nav__item"><a href="footer" class="nav__link">Contacts</a></li>
             </ul>
             <div class="header__cart cart" tabindex="0">
@@ -50,14 +48,9 @@
                         <a href="#" class="product__image">
                             <div class="product__switch image-switch">
                                 <div class="image-switch__item">
-                                    <div class="image-switch__img"><img src="/images/book-11.jpg"></div>
+                                    <div class="image-switch__img"><img  th:src="@{${book.imageUrl}}"></div>
                                 </div>
-                                <div class="image-switch__item">
-                                    <div class="image-switch__img"><img src="/images/book-12.jpg"></div>
-                                </div>
-                                <div class="image-switch__item">
-                                    <div class="image-switch__img"><img src="/images/book-13.jpg"></div>
-                                </div>
+
                             </div>
                             <ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
                         </a>
@@ -92,45 +85,24 @@
     </div>
 </main>
 
-<footer class="footer">
-    <div class="footer__addr">
-        <h1 class="footer__logo">Bookshop</h1>
-        <h2>Contact</h2>
-        <address>
-            5534 Lviv, Ukraine, #65498<br>
-        </address>
+<footer class="footer" style="height:140px">
+    <div class="footer__addr" >
+        <h1 class="footer__logo">BookShop</h1>
     </div>
     <ul class="footer__nav">
-        <li class="nav__item">
-            <h2 class="nav__title">Media</h2>
-            <ul class="nav__ul">
-                <li>
-                    <a href="#" class="tooltip-o">Online</a>
-                </li>
-            </ul>
-        </li>
-        <li class="nav__item nav__item--extra">
-            <h2 class="nav__title">Technology</h2>
-            <ul class="nav__ul nav__ul--extra">
-                <li>
-                    <a href="#">Design</a>
-                </li>
-            </ul>
-        </li>
-        <li class="nav__item">
+        <li class="nav__item" style="margin-left:70%">
             <h2 class="nav__title">Legal</h2>
             <ul class="nav__ul">
                 <li>
                     <a href="footer">Privacy Policy</a>
                 </li>
-
                 <li>
                     <a href="footer">Terms of Use</a>
                 </li>
             </ul>
         </li>
     </ul>
-    <div class="legal">
+    <div class="legal" style="margin-top:-20px">
         <p>&copy; 2021 Nastia Herych. All rights reserved.</p>
         <div class="legal__links"></div>
     </div>
